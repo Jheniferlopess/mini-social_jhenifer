@@ -1,8 +1,11 @@
+// === ESTADO (dados da aplicação) ===
 let likeCount = 0;
 let dislikeCount = 0;
 let curtido = false;
 let descurtido = false;
 
+
+// === SERVICE (regras de negócio)
 function curtir() {
   if (curtido == false){
     likeCount++;
@@ -44,7 +47,15 @@ function descurtir() {
   }
 }
 
+// === CONTROLLER (intermediação evento/regras de negócio)
+function clicarCurtir(){
+  curtir();
+}
 
+function clicarDescurtir(){
+  descurtir();
+}
 
+// === EVENTOS ===
 document.getElementById("likeBtn").addEventListener("click", curtir);
 document.getElementById("dislikeBtn").addEventListener("click", descurtir);
